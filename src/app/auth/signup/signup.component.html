@@ -2,15 +2,18 @@
   <div class="row justify-content-center">
     <div class="col-md-3"></div>
     <div class="col-md-6">
+
       <div class="card">
+
         <div class="card-header" style="text-align: center">
           <h4>Register</h4>
         </div>
+
         <div class="card-body">
           <form [formGroup]="signupForm" (ngSubmit)="signup()">
+            
             <div class="form-group row">
-              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail
-                Address</label>
+              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
               <div class="col-md-6">
                 <input type="text" [formControlName]="'email'" id="email_address" class="form-control" name="email-address">                
                 <span *ngIf="!signupForm.get('email')?.valid && signupForm.get('email')?.touched" class="help-block">Please enter a valid email</span>

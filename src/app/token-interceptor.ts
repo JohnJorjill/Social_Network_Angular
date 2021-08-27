@@ -14,8 +14,7 @@ export class TokenInterceptor implements HttpInterceptor {
     refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject(null);
     constructor(public authService: AuthService) { }
 
-    intercept(req: HttpRequest<any>,
-        next: HttpHandler): Observable<HttpEvent<any>> {
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (this.authService.getJwtToken()) {
             this.addToken(req, this.authService.getJwtToken());
         }

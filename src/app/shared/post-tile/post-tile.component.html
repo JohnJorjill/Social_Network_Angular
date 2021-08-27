@@ -13,7 +13,7 @@
         <a class="postname" href="{{post.url}}">{{post.postName}}</a>
       </div>
       <div>
-        <p class="post-text">{{post.description}}</p>
+        <p class="post-text" [innerHTML]="post.description"></p>
       </div>
       <hr />
       <span>
@@ -21,7 +21,7 @@
           <fa-icon [icon]="faComments"></fa-icon>
           Comments({{post.commentCount}})
         </a>
-        <button class="login">
+        <button class="login" (click)="goToPost(post.id)">
           Read Post
         </button>
       </span>
